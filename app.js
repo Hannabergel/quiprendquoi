@@ -45,4 +45,6 @@ app.post('/party/:id/items/:idItem', function(req, res) {
   .catch((err) => res.send(err));
 });
 
+app.use(express.static('public'));
+
 app.listen(process.env.PORT, () => console.log(`Front app listening on port ${process.env.PORT}!`));
