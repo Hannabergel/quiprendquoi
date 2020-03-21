@@ -7,6 +7,10 @@ app.get('/', function(req, res) {
     res.render('index', { title: 'Qui prend quoi ?' });
 });
 
+app.post('/party', function(req, res) {
+    res.send('Post ok !')
+  });
+
 app.set('view engine', 'pug');
 
 
