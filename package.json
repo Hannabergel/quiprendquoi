@@ -4,8 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "concurrently --kill-others \"npm run sass\" \"nodemon app.js\"",
-    "sass": "node-sass styles/style.scss public/style.css -w --output-style compressed"
+    "start": "concurrently --kill-others \"npm run sass\" \"npm run watchify\" \"nodemon app.js\"",
+    "sass": "node-sass styles/style.scss public/style.css -w --output-style compressed",
+    "watchify": "watchify scripts/*.js -o public/script.js"
   },
   "repository": {
     "type": "git",
@@ -30,6 +31,5 @@
     "node-sass": "^4.13.1",
     "nodemon": "^2.0.2",
     "watchify": "^3.11.1"
-  },
-  "watchify": "watchify scripts/test.js -o public/script.js"
+  }
 }
