@@ -6,6 +6,7 @@ const app = express();
 
 app.set('view engine', 'pug');
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.static('public'));
 
 app.get('/', function(req, res) {
   res.render('index', { title: 'Qui prend quoi ?' });
@@ -44,7 +45,5 @@ app.post('/party/:id/items/:idItem', function(req, res) {
   .then(({ data }) => res.redirect(`/party/${req.params.id}`))
   .catch((err) => res.send(err));
 });
-
-app.use(express.static('public'));
 
 app.listen(process.env.PORT, () => console.log(`Front app listening on port ${process.env.PORT}!`));

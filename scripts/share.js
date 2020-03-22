@@ -18,3 +18,4 @@ function shareUrl($shareEl) {
     url: $shareEl.getAttribute('data-share-url'),
   })
 }
+
